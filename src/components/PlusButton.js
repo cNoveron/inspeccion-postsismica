@@ -8,10 +8,15 @@ export default class PlusButton {
     }
 
     render() {
-        <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
+        return <button
+            type="button"
+            style={{ display: "inline-flex", flexDirection: "row" }}
+            className="btn btn-success"
+            onClick={() => {
             this.props.clearForm()
             this.props.history.push("/new")
-        }}>
+            }
+        }>
             <MdAddCircle size="1.5em" />{this.props.text}
         </button>
     }
