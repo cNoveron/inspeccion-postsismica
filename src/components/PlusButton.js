@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import MdAddCircle from 'react-icons/md'
+import { MdAddCircle } from 'react-icons/md'
 import { fetchForms, clearForm } from '../actions/form'
 
 export default class PlusButton {
