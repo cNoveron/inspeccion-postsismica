@@ -438,11 +438,55 @@ class CreateForm extends Component {
                                     style={{ fontSize: "20px" }}
                                     onChange={this.onChange}
                                     disabled={this.state.loading}
-                                    value={this.state.title}
-                                    name="title"
-                                    id="_new_title"
-                                    placeholder="Título del reporte" />
+                                    value={this.state.calleynumero}
+                                    name="calleynumero"
+                                    id="calleynumero"
+                                    placeholder="Calle y número" />
 
+                                <Text
+                                    className="input-lg"
+                                    type="text"
+                                    style={{ fontSize: "20px" }}
+                                    onChange={this.onChange}
+                                    disabled={this.state.loading}
+                                    value={this.state.colonia}
+                                    name="colonia"
+                                    id="colonia"
+                                    placeholder="Colonia" />
+
+                                <Text
+                                    className="input-lg"
+                                    type="text"
+                                    style={{ fontSize: "20px" }}
+                                    onChange={this.onChange}
+                                    disabled={this.state.loading}
+                                    value={this.state.alcaldiaomunicipio}
+                                    name="alcaldiaomunicipio"
+                                    id="alcaldiaomunicipio"
+                                    placeholder="Alcaldía o Municipio" />
+
+                                <Text
+                                    className="input-lg"
+                                    type="text"
+                                    style={{ fontSize: "20px" }}
+                                    onChange={this.onChange}
+                                    disabled={this.state.loading}
+                                    value={this.state.coidgopostal}
+                                    name="coidgopostal"
+                                    id="coidgopostal"
+                                    placeholder="Código Postal" />
+                                
+                                <Text
+                                    className="input-lg"
+                                    type="number"
+                                    style={{ fontSize: "20px" }}
+                                    onChange={this.onChange}
+                                    disabled={this.state.loading}
+                                    value={this.state.numerodeareas}
+                                    name="numerodeareas"
+                                    id="numerodeareas"
+                                    placeholder="Número de Áreas" />
+                                
                                 <Textarea
                                     className="form-control input-lg"
                                     style={{ fontSize: "15px", height: "auto" }}
