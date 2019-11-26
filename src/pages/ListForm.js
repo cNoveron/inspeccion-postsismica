@@ -9,7 +9,7 @@ import store from '../store'
 import _ from 'lodash'
 import Card from '../components/layout/Card'
 import { uniqueId } from '../utils/helpers'
-import { PlusButton } from '../components'
+import { PlusButton } from '../components/PlusButton'
 import { Text, Textarea } from '../components/fields'
 import { MdDelete, MdCheckBoxOutlineBlank, MdCreate, MdCheckBox, MdAddCircle, MdDone } from 'react-icons/md'
 import { CARD_NEW, CARD_REMOVED, CARD_REMOVING, CARD_REQUIRED } from '../actions/types';
