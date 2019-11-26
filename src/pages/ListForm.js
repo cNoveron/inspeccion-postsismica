@@ -9,6 +9,7 @@ import store from '../store'
 import _ from 'lodash'
 import Card from '../components/layout/Card'
 import { uniqueId } from '../utils/helpers'
+import { PlusButton } from '../components'
 import { Text, Textarea } from '../components/fields'
 import { MdDelete, MdCheckBoxOutlineBlank, MdCreate, MdCheckBox, MdAddCircle, MdDone } from 'react-icons/md'
 import { CARD_NEW, CARD_REMOVED, CARD_REMOVING, CARD_REQUIRED } from '../actions/types';
@@ -61,16 +62,13 @@ class ListForm extends Component {
                     <div className="card">
                         <div className="card-body">
                             <div className="form-group" style={{ marginBottom: "0px" }}>
-
                                 <div className="text-left">
-                                    <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
-                                        this.props.clearForm()
-                                        this.props.history.push("/new")
-                                    }}>
-                                        <MdAddCircle size="1.5em" /> Add New Form
-                                    </button>
+                                    <PlusButton text="Analizar Edificación" />
+                                    <PlusButton text="Generar reporte y/o dictamen" />
+                                    <PlusButton text="Modificar reporte y/o dictamen" />
+                                    <PlusButton text="Consultar e imprimir reporte" />
+                                    <PlusButton text="Mi cuenta" />
                                 </div>
-
                             </div>
                         </div>
                     </div>
