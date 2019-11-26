@@ -419,10 +419,14 @@ class CreateForm extends Component {
         return (
             <div className="row justify-content-md-center text-center mb-5">
                 <div className="col-sm-8">
-                    {this.props.match.params.id && <h2 className="mt-4">Edit: {this.state.title}</h2>}
-                    {!this.props.match.params.id && <h2 className="mt-4">Create A Form</h2>}
+                    {this.props.match.params.id && <h2 className="mt-4">Editar {this.state.title}</h2>}
+                    {!this.props.match.params.id && <h2 className="mt-4">Nuevo Reporte</h2>}
                     <div className="card">
                         <div className="card-body">
+                            <div>
+                                <h3 className="mt-4">{this.state.title}</h3>
+                            </div>
+
                             {this.state.success && <div class="alert alert-success text-left fade show" role="alert">
                                 <strong>Well done! all fields is successfully saved!</strong>
                             </div>}
@@ -433,7 +437,7 @@ class CreateForm extends Component {
                                     disabled={this.state.loading}
                                     value={this.state.title}
                                     name="title" id="_new_title"
-                                    placeholder="Enter form title" />
+                                    placeholder="Título del reporte" />
 
                                 <Textarea className="form-control input-lg" style={{ fontSize: "15px", height: "auto" }}
                                     onChange={this.onChange}
