@@ -432,14 +432,20 @@ class CreateForm extends Component {
                             </div>}
 
                             <div className="form-group">
-                                <Text className="input-lg" type="text" style={{ fontSize: "20px" }}
+                                <Text
+                                    className="input-lg"
+                                    type="text"
+                                    style={{ fontSize: "20px" }}
                                     onChange={this.onChange}
                                     disabled={this.state.loading}
                                     value={this.state.title}
-                                    name="title" id="_new_title"
+                                    name="title"
+                                    id="_new_title"
                                     placeholder="Título del reporte" />
 
-                                <Textarea className="form-control input-lg" style={{ fontSize: "15px", height: "auto" }}
+                                <Textarea
+                                    className="form-control input-lg"
+                                    style={{ fontSize: "15px", height: "auto" }}
                                     onChange={this.onChange}
                                     value={this.state.desc}
                                     disabled={this.state.loading}
@@ -454,12 +460,21 @@ class CreateForm extends Component {
 
                                     <div className="col-8">
                                         <div className="text-right">
-                                            <button type="button" disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))} style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={this.saveForm}>
+                                            <button
+                                                className="btn btn-success"
+                                                type="button"
+                                                disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
+                                                style={{ display: "inline-flex", flexDirection: "row" }}
+                                                onClick={this.saveForm}>
                                                 <MdDone size="1.5em" /> {this.state.loading == true ? 'Loading...' : 'Save All'}
                                             </button>
 
                                             <div className="btn-group">
-                                                <button disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))} style={{ marginLeft: "10px", display: "inline-flex", flexDirection: "row" }} type="button" className="btn btn-primary"
+                                                <button
+                                                    className="btn btn-primary"
+                                                    type="button"
+                                                    disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
+                                                    style={{ marginLeft: "10px", display: "inline-flex", flexDirection: "row" }}
                                                     onClick={this.addSection}>
                                                     <MdAdd size="1.5em" /> New Section
                                                 </button>
