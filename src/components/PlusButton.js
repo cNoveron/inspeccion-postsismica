@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import MdAddCircle from 'react-icons/md'
+import { fetchForms, clearForm } from '../actions/form'
 
 export default class PlusButton {
     constructor(props) {
-        this.text = 
+        this.props = props
     }
 
     render() {
@@ -11,7 +12,7 @@ export default class PlusButton {
             this.props.clearForm()
             this.props.history.push("/new")
         }}>
-            <MdAddCircle size="1.5em" />{this.text}
+            <MdAddCircle size="1.5em" />{this.props.text}
         </button>
     }
 }
