@@ -30,6 +30,11 @@ class CreateForm extends Component {
         super(props)
         this.state = {
             title: '',
+            calleynumero: '',
+            colonia: '',
+            alcaldiaomunicipio: '',
+            coidgopostal: '',
+            numerodeareas: '',
             desc: '',
             edit: null,
             delete: null,
@@ -58,7 +63,12 @@ class CreateForm extends Component {
             this.props.fetchForm(this.props.match.params.id)
                 .then(res => {
                     this.setState({
-                        title: res.title,
+                        title: new Date().toUTCString(),
+                        calleynumero: res.calleynumero,
+                        colonia: res.colonia,
+                        alcaldiaomunicipio: res.alcaldiaomunicipio,
+                        coidgopostal: res.coidgopostal,
+                        numerodeareas: res.numerodeareas,
                         desc: res.description,
                         init: false
                     })
@@ -102,7 +112,11 @@ class CreateForm extends Component {
     async saveForm(e) {
         const form = this.props.forms
 
-        if (this.state.title == '' || this.state.desc == '') {
+        if (this.state.calleynumero == '' ||
+            this.state.colonia == '' ||
+            this.state.alcaldiaomunicipio == '' ||
+            this.state.coidgopostal == '' ||
+            this.state.numerodeareas == '') {
             return
         }
 
@@ -133,6 +147,11 @@ class CreateForm extends Component {
 
         const data = {
             title: this.state.title,
+            calleynumero: this.state.calleynumero,
+            colonia: this.state.colonia,
+            alcaldiaomunicipio: this.state.alcaldiaomunicipio,
+            coidgopostal: this.state.coidgopostal,
+            numerodeareas: this.state.numerodeareas,
             description: this.state.desc,
             data: json,
         }
