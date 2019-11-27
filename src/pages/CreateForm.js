@@ -387,14 +387,14 @@ class CreateForm extends Component {
                                 value={this.state.editName}
                                 name="editName"
                                 id="_section"
-                                placeholder="Enter section name" />}
+                                placeholder="Inspección del inmueble..." />}
                         </div>
                         <button
                             className="btn btn-primary new-field"
                             type="button"
                             disabled={this.state.disabled || (this.state.init)}
                             onClick={this.newField.bind(this, wiz[1].sectionId, wiz[1].section.name)}>
-                            <MdAdd size="1.5em" />
+                            <MdAdd size="1.5em" />Nuevo aspecto a evaluar
                         </button>
                     </div>
                     <div style={{ display: "block", clear: "both" }}></div>
@@ -430,7 +430,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >Requerido
+                                                        className="" >No
                                                     </span>
                                                 </React.Fragment>}
 
@@ -440,7 +440,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >Requerido
+                                                        className="" >Sí
                                                     </span>
                                                 </React.Fragment>}
                                             </button>
