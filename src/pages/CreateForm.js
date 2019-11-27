@@ -378,15 +378,22 @@ class CreateForm extends Component {
                             onKeyDown={this.onKeypress.bind(this, wiz[1].id, wiz[1].sectionId)}
                             onClick={this.editSection.bind(this, wiz[0], wiz[1].section.name)}>
                             {this.state.sectionName !== wiz[0] ? wiz[1].section.name : ''}
-                            {this.state.sectionName == wiz[0] && <Text className="input-lg" type="text"
+                            {this.state.sectionName == wiz[0] && <Text
+                                className="input-lg"
+                                type="text"
                                 style={{ fontSize: "20px", height: "34px", marginBottom: "0px" }}
                                 disabled={this.state.loading}
                                 onChange={this.onChange}
                                 value={this.state.editName}
-                                name="editName" id="_section"
+                                name="editName"
+                                id="_section"
                                 placeholder="Enter section name" />}
                         </div>
-                        <button disabled={this.state.disabled || (this.state.init)} onClick={this.newField.bind(this, wiz[1].sectionId, wiz[1].section.name)} type="button" className="btn btn-primary new-field">
+                        <button
+                            className="btn btn-primary new-field"
+                            type="button"
+                            disabled={this.state.disabled || (this.state.init)}
+                            onClick={this.newField.bind(this, wiz[1].sectionId, wiz[1].section.name)}>
                             <MdAdd size="1.5em" />
                         </button>
                     </div>
@@ -399,35 +406,66 @@ class CreateForm extends Component {
                                 })}>
                                     <div className="row">
                                         <div className="text-left col-7">
-                                            <h4>{val[1].title != '' ? val[1].title : <em style={{ color: "#999" }}>No Question</em>}</h4>
+                                            <h4>{val[1].title != ''
+                                                ? val[1].title
+                                                : <em style={{ color: "#999" }}>Título del Reporte</em>}
+                                            </h4>
                                             <p>{val[1].type.toUpperCase().replace("_", " ")}</p>
                                         </div>
                                         <div className="col-5">
-                                            <button onClick={this.toggleRequired.bind(this, val[1].id)} style={{ marginRight: "10px" }} type="button" className={classnames({
-                                                'btn required': true,
-                                                'btn-default': !val[1].required,
-                                                'btn-dark': val[1].required
-                                            })}>
-                                                {!val[1].required && <React.Fragment><MdCheckBoxOutlineBlank size="1.5em" style={{ float: "left" }} /> <span style={{ float: "left", lineHeight: "25px" }} className="" >Required</span></React.Fragment>}
+                                            <button
+                                                className={classnames({
+                                                    'btn required': true,
+                                                    'btn-default': !val[1].required,
+                                                    'btn-dark': val[1].required
+                                                })}
+                                                onClick={this.toggleRequired.bind(this, val[1].id)}
+                                                style={{ marginRight: "10px" }}
+                                                type="button">
+                                                {!val[1].required && <React.Fragment>
+                                                    <MdCheckBoxOutlineBlank
+                                                        size="1.5em"
+                                                        style={{ float: "left" }} />
+                                                    <span
+                                                        style={{ float: "left", lineHeight: "25px" }}
+                                                        className="" >Required
+                                                    </span>
+                                                </React.Fragment>}
 
-                                                {val[1].required && <React.Fragment><MdCheckBox size="1.5em" style={{ float: "left" }} /> <span style={{ float: "left", lineHeight: "25px" }} className=""> Required</span></React.Fragment>}
+                                                {val[1].required && <React.Fragment>
+                                                    <MdCheckBox
+                                                        size="1.5em"
+                                                        style={{ float: "left" }} />
+                                                    <span
+                                                        style={{ float: "left", lineHeight: "25px" }}
+                                                        className="" >Required
+                                                    </span>
+                                                </React.Fragment>}
                                             </button>
-                                            <button onClick={this.removeCard.bind(this, val[1].id)} type="button" className="btn btn-outline-danger delete_card" style={{ marginRight: "10px" }}>
+                                            <button
+                                                className="btn btn-outline-danger delete_card"
+                                                type="button"
+                                                onClick={this.removeCard.bind(this, val[1].id)}
+                                                style={{ marginRight: "10px" }}>
                                                 <MdDelete size="1.5em" />
                                             </button>
-                                            <button onClick={this.editCard.bind(this, val[1].id)} type="button"
+                                            <button
                                                 className={classnames({
                                                     'btn delete-card': true,
                                                     'btn-outline-secondary': this.state.edit !== val[1].id,
                                                     'btn-success': this.state.edit == val[1].id
-                                                })}>
+                                                })}
+                                                onClick={this.editCard.bind(this, val[1].id)}
+                                                type="button">
                                                 <MdCreate size="1.5em" />
                                             </button>
                                         </div>
                                     </div>
                                 </div>
 
-                                {this.state.edit == val[1].id && <div className="panel-body"><Card id={val[1].id} data={val[1]} delete={removingId != false} /> </div>}
+                                {this.state.edit == val[1].id && <div className="panel-body">
+                                    <Card id={val[1].id} data={val[1]} delete={removingId != false} />
+                                </div>}
                             </div>
                         )
                         )}
@@ -566,13 +604,22 @@ class CreateForm extends Component {
                     </div>}
 
                     {this.props.match.params.id && !_.isEmpty(forms.create) && <div className="text-center">
-                        <button type="button" disabled={this.state.disabled} onClick={this.modalOpen.bind(this)} className="btn mt-4 btn-outline-dark btn-lg">
+                        <button
+                            className="btn mt-4 btn-outline-dark btn-lg"
+                            type="button"
+                            disabled={this.state.disabled}
+                            onClick={this.modalOpen.bind(this)}>
                             <MdDelete size="1.5em" />  Delete Permanently
                         </button>
                     </div>}
 
-                    {this.state.modal && <Modal okButton="OK, Delete!" onClick={this.removeForm} onClose={this.modalClose.bind(this)} stateId="_remove_form" title="Delete Form">
-                        <h4>Are you sure to want to delete permanently ? </h4>
+                    {this.state.modal && <Modal
+                        okButton="OK, Delete!"
+                        onClick={this.removeForm}
+                        onClose={this.modalClose.bind(this)}
+                        stateId="_remove_form"
+                        title="Delete Form">
+                        <h4>Are you sure to want to delete permanently?</h4>
                     </Modal>}
                 </div>
             </div >
