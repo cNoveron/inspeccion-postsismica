@@ -28,6 +28,10 @@ export default function (state = initialState, action) {
     switch (action.type) {
         case CARD_NEW:
         case CHANGE_QUESTION:
+            return {
+                ...state,
+                question: action.payload.title
+            }
         case CHANGE_PLACEHOLDER:
         case CHANGE_TYPE:
         case ADD_OPTION:
@@ -75,12 +79,10 @@ export default function (state = initialState, action) {
                 create: {}
             }
         case CARD_REMOVING:
-            const id = action.id
-            const list = action.payload
             return {
                 ...state,
-                create: list,
-                deleting: id
+                create: action.payload,
+                deleting: action.id
             }
         case CHANGE_SECTION:
             return {
