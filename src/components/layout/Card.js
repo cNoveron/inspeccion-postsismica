@@ -144,23 +144,32 @@ class Card extends Component {
                                 placeholder="Question"
                                 value={this.state.question} name="title" id={id + "_question"} /> */}
                         </div>
-                        <div className="col-5">
+                    </div>
+
+                    <div className="row">
+                        <div className="col-12">
                             <select
                                 className="form-control" 
-                                name="fields"
+                                name="title"
                                 id="fields"
-                                onChange={this.onFieldsUpdate}
+                                onChange={this.onTitleUpdate}
                                 style={{ fontSize: "17px" }}
-                                value={this.state.fieldType}
+                                value={this.state.question}
                             >
-                                <option value="text">Text</option>
-                                <option value="textarea">Paragaph</option>
-                                <option value="radio">Multiple Choice</option>
-                                <option value="checkbox">Checkboxes</option>
-                                <option value="dropdown">Dropdown</option>
-                                <option value="image_upload">Image Upload</option>
-                                <option value="date">Date</option>
-                                <option value="time">Time</option>
+                                <option value="Derrumbe total">Derrumbe total</option>
+                                <option value="Derrumbe parcial">Derrumbe parcial</option>
+                                <option value="Edificación separada de su cimentación">Edificación separada de su cimentación</option>
+                                <option value="Asentamiento diferencial o hundimiento">Asentamiento diferencial o hundimiento</option>
+                                <option value="Inclinación notoria de la edificación o de algún entrepiso">Inclinación notoria de la edificación o de algún entrepiso</option>
+                                <option value="Daños en elementos estructurales (columnas, vigas, muros)">Daños en elementos estructurales (columnas, vigas, muros)</option>
+                                <option value="Daños en elementos no estructurales">Daños en elementos no estructurales</option>
+                                <option value="Daños en instalaciones eléctricas">Daños en instalaciones eléctricas</option>
+                                <option value="Daños en instalaciones hidrosanitarias">Daños en instalaciones hidrosanitarias</option>
+                                <option value="Daños en instalaciones de gas">Daños en instalaciones de gas</option>
+                                <option value="Grietas, movimiento del suelo">Grietas, movimiento del suelo</option>
+                                <option value="Deslizamiento de talud o corte">Deslizamiento de talud o corte</option>
+                                <option value="Pretiles, balcones u otros objetos en peligro de caer">Pretiles, balcones u otros objetos en peligro de caer</option>
+                                <option value="Otros peligros (líneas o ductos rotos, derrames tóxicos, etc.">Otros peligros (líneas o ductos rotos, derrames tóxicos, etc.</option>
                             </select>
                         </div>
                     </div>
