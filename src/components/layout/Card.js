@@ -35,8 +35,9 @@ class Card extends Component {
 
     onTitleUpdate(e) {
         let data = this.props.data
-
         data.title = e.target.value
+
+        this.setState({ question: data.title })
 
         store.dispatch({
             type: CHANGE_QUESTION,
