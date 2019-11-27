@@ -242,14 +242,14 @@ class CreateForm extends Component {
                 sectionId: sectionId,
                 section: {
                     id: sectionId,
-                    name: "New section"
+                    name: "Inspección Post-Sísmica"
                 }
             })
 
             data.sectionId = sectionId
             data.section = {
                 id: sectionId,
-                name: "New section"
+                name: "Inspección Post-Sísmica"
             }
 
         } else {
@@ -368,7 +368,7 @@ class CreateForm extends Component {
         const removingId = this.props.forms.deleting
         let cards = []
         let sections = _.keyBy(forms.create, 'sectionId')
-        console.log(forms.create)
+        console.log("forms.create ",forms.create)
         Object.entries(sections).map((wiz, idx) => {
             cards.push(
                 <div className="section" key={wiz[1].sectionId}>
@@ -428,7 +428,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >Required
+                                                        className="" >Requerido
                                                     </span>
                                                 </React.Fragment>}
 
@@ -438,7 +438,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >Required
+                                                        className="" >Requerido
                                                     </span>
                                                 </React.Fragment>}
                                             </button>
@@ -476,7 +476,7 @@ class CreateForm extends Component {
         return (
             <div className="row justify-content-md-center text-center mb-5">
                 <div className="col-sm-8">
-                    {this.props.match.params.id && <h2 className="mt-4">Editar {this.state.title}</h2>}
+                    {this.props.match.params.id && <h2 className="mt-4">Editando: {this.state.title}</h2>}
                     {!this.props.match.params.id && <h2 className="mt-4">Nuevo Reporte</h2>}
                     <div className="card">
                         <div className="card-body">
@@ -485,7 +485,7 @@ class CreateForm extends Component {
                             </div>
 
                             {this.state.success && <div class="alert alert-success text-left fade show" role="alert">
-                                <strong>Well done! all fields is successfully saved!</strong>
+                                <strong>Los cambios han sido guardados!</strong>
                             </div>}
 
                             <div className="form-group">
@@ -556,7 +556,7 @@ class CreateForm extends Component {
 
                                 <div className="row">
                                     <div className="col-4 text-left">
-                                        <Link to="/" className="btn btn-outline-secondary">&larr; Back to List</Link>
+                                        <Link to="/" className="btn btn-outline-secondary">&larr; Menú Principal</Link>
                                     </div>
 
                                     <div className="col-8">
@@ -567,7 +567,7 @@ class CreateForm extends Component {
                                                 disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
                                                 style={{ display: "inline-flex", flexDirection: "row" }}
                                                 onClick={this.saveForm}>
-                                                <MdDone size="1.5em" /> {this.state.loading == true ? 'Loading...' : 'Save All'}
+                                                <MdDone size="1.5em" /> {this.state.loading == true ? 'Cargando...' : 'Guardar'}
                                             </button>
 
                                             <div className="btn-group">
@@ -577,7 +577,7 @@ class CreateForm extends Component {
                                                     disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
                                                     style={{ marginLeft: "10px", display: "inline-flex", flexDirection: "row" }}
                                                     onClick={this.addSection}>
-                                                    <MdAdd size="1.5em" /> New Section
+                                                    <MdAdd size="1.5em" /> Nueva Inspección
                                                 </button>
                                             </div>
                                         </div>
@@ -593,13 +593,13 @@ class CreateForm extends Component {
                     {!_.isEmpty(forms.create) && _.findKey(forms.create, 'sectionId') === undefined &&
                         <div className="card-body text-center">
                             <MdWarning color="red" size="3em" /> <br />
-                            <h4>You must update this form by removing the form and starts it again</h4>
+                            <h4>Actualice esta forma eliminándola y volviéndola a crear.</h4>
                         </div>
                     }
 
                     {this.state.init && _.isEmpty(forms.create) && <div className="panel">
                         <div className="card-body">
-                            Fetching fields...
+                            Obteniendo campos...
                         </div>
                     </div>}
 
@@ -609,7 +609,7 @@ class CreateForm extends Component {
                             type="button"
                             disabled={this.state.disabled}
                             onClick={this.modalOpen.bind(this)}>
-                            <MdDelete size="1.5em" />  Delete Permanently
+                            <MdDelete size="1.5em" />  Eliminar Reporte Permanentemente
                         </button>
                     </div>}
 
@@ -619,7 +619,7 @@ class CreateForm extends Component {
                         onClose={this.modalClose.bind(this)}
                         stateId="_remove_form"
                         title="Delete Form">
-                        <h4>Are you sure to want to delete permanently?</h4>
+                        <h4>¿Está seguro de eliminar este reporte? Esta acción no se podrá deshacer.</h4>
                     </Modal>}
                 </div>
             </div >
