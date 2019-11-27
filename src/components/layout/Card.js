@@ -31,7 +31,8 @@ class Card extends Component {
         // Options
         this.onUpdateOptions = this.onUpdateOptions.bind(this)
         this.addOption = this.addOption.bind(this)
-    }
+    }    
+
     onTitleUpdate(e) {
         let data = this.props.data
 
@@ -133,13 +134,14 @@ class Card extends Component {
 
                     <div className="row">
                         <div className="col-8">
-                            <input type="text"
+                            {/* <input
+                                className="form-control"
+                                type="text"
+                                style={{ fontSize: "17px" }}
                                 onChange={(e) => { this.setState({ question: e.target.value }) }}
                                 onBlur={this.onTitleUpdate}
                                 placeholder="Question"
-                                value={this.state.question}
-                                style={{ fontSize: "17px" }}
-                                className="form-control" name="title" id={id + "_question"} />
+                                value={this.state.question} name="title" id={id + "_question"} /> */}
                         </div>
                         <div className="col-4">
                             <select name="fields" className="form-control" id="fields"
@@ -166,7 +168,11 @@ class Card extends Component {
                                 this.props.data.type == 'textarea' ||
                                 this.props.data.type == 'image_upload'
                             ) &&
-                                <input type="text" placeholder={this.props.data.type == 'image_upload' ? "Enter description" : "Enter placeholder"} name={id + "_placeholder"} className="form-control"
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    placeholder={this.props.data.type == 'image_upload' ? "Enter description" : "Enter placeholder"}
+                                    name={id + "_placeholder"} 
                                     value={this.state.value}
                                     onChange={(e) => { this.setState({ value: e.target.value }) }}
                                     onBlur={this.onPlaceholderUpdate}
