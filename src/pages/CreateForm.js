@@ -406,10 +406,12 @@ class CreateForm extends Component {
                                 })}>
                                     <div className="row">
                                         <div className="text-left col-7">
-                                            <h4>{val[1].title != ''
-                                                ? val[1].title
-                                                : <em style={{ color: "#999" }}>Título del Reporte</em>}
-                                            </h4>
+                                            <h4><em style={{ color: "#999" }}>
+                                                {console.log("val[1] ", val[1])}
+                                                {val[1].title = val[1].title == ''
+                                                    ? 'Inspección del ' + new Date().toUTCString()
+                                                    : val[1].title}
+                                            </em></h4>
                                             <p>{val[1].type.toUpperCase().replace("_", " ")}</p>
                                         </div>
                                         <div className="col-5">
