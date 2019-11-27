@@ -133,7 +133,8 @@ class Card extends Component {
                 <div className="panel-body" style={{ padding: 0 }}>
 
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-7">
+                            <div style={{ textAlign: "left", fontSize: "20px" }}>Seleccione el estado de la edificación que desea evaluar</div>
                             {/* <input
                                 className="form-control"
                                 type="text"
@@ -143,8 +144,11 @@ class Card extends Component {
                                 placeholder="Question"
                                 value={this.state.question} name="title" id={id + "_question"} /> */}
                         </div>
-                        <div className="col-4">
-                            <select name="fields" className="form-control" id="fields"
+                        <div className="col-5">
+                            <select
+                                className="form-control" 
+                                name="fields"
+                                id="fields"
                                 onChange={this.onFieldsUpdate}
                                 style={{ fontSize: "17px" }}
                                 value={this.state.fieldType}
@@ -190,16 +194,17 @@ class Card extends Component {
                                                     </a>
                                                 </div>
                                                 <div className="col-10">
-                                                    <FieldText type="text" placeholder="Enter Option"
+                                                    <FieldText
+                                                        type="text"
+                                                        style={{ marginBottom: "10px" }}
+                                                        placeholder="Enter Option"
                                                         name={id + "_placeholder"}
-                                                        style={{ marginBottom: "5px" }}
                                                         value={val}
                                                         onBlur={this.onUpdateOptions.bind(this, index)}
                                                         onChange={(e) => {
                                                             this.state.options[index] = e.target.value
                                                             this.forceUpdate()
                                                         }}
-                                                        style={{ marginBottom: "10px" }}
                                                         id={id + "_placeholder"} />
                                                 </div>
                                             </div>
