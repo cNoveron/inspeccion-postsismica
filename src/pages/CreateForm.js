@@ -406,7 +406,7 @@ class CreateForm extends Component {
                                 })}>
                                     <div className="row">
                                         <div className="text-left col-7">
-                                            <h4><em style={{ color: "#999" }}>
+                                            <h4><em style={{ fontWeigh: "bold", fontSize: "16px" }}>
                                                 {console.log("val[1] ", val[1])}
                                                 {val[1].title = val[1].title == ''
                                                     ? 'Inspección del ' + new Date().toUTCString()
