@@ -134,16 +134,10 @@ class Card extends Component {
                 <div className="panel-body" style={{ padding: 0 }}>
 
                     <div className="row">
-                        <div className="col-7">
-                            <div style={{ textAlign: "left", fontSize: "20px" }}>Seleccione el estado de la edificación que desea evaluar</div>
-                            {/* <input
-                                className="form-control"
-                                type="text"
-                                style={{ fontSize: "17px" }}
-                                onChange={(e) => { this.setState({ question: e.target.value }) }}
-                                onBlur={this.onTitleUpdate}
-                                placeholder="Question"
-                                value={this.state.question} name="title" id={id + "_question"} /> */}
+                        <div className="col-12">
+                            <div style={{ textAlign: "left", fontSize: "17px" }}>
+                                Seleccione el aspecto a evaluar
+                            </div>
                         </div>
                     </div>
 
