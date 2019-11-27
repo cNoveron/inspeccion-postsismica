@@ -105,22 +105,19 @@ class ListForm extends Component {
                                 <table className="table table-hover text-left">
                                     <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Code</th>
-                                            <th>Description</th>
-                                            <th>Action</th>
+                                            <th>Calle y Número</th>
+                                            <th>Colonia</th>
+                                            <th>Alcaldía o Municipio</th>
+                                            <th>Editar</th>
                                         </tr>
                                     </thead>
                                     {!_.isEmpty(forms.list) &&
                                         <tbody>
                                             {forms.list.map((row, ind) => (
                                                 <tr key={ind}>
-                                                    <td>
-                                                        <strong> {row.title}</strong>
-                                                    </td>
-                                                    <td>
-                                                        <code>{row.code}</code>
-                                                    </td>
+                                                    <td>{row.calleynumero}</td>
+                                                    <td>{row.colonia}</td>
+                                                    <td>{row.alcaldiaomunicipio}</td>
                                                     <td>
                                                         {row.description.substr(0, 25)}{row.description.length > 25 ? '...' : ''}
                                                     </td>
