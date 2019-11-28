@@ -63,7 +63,7 @@ class CreateForm extends Component {
             this.props.fetchForm(this.props.match.params.id)
                 .then(res => {
                     this.setState({
-                        title: new Date().toUTCString(),
+                        title: res.title,
                         calleynumero: res.calleynumero,
                         colonia: res.colonia,
                         alcaldiaomunicipio: res.alcaldiaomunicipio,
@@ -124,10 +124,13 @@ class CreateForm extends Component {
             return
         }
 
+        let timestamp = new Date().toUTCString();
+
         this.setState({
             disabled: true,
             loading: true,
-            edit: null
+            edit: null,
+            title: timestamp,
         })
 
         const entries = _.keyBy(form.create, 'sectionId')
@@ -146,7 +149,7 @@ class CreateForm extends Component {
         }
 
         const data = {
-            title: this.state.title,
+            title: timestamp,
             calleynumero: this.state.calleynumero,
             colonia: this.state.colonia,
             alcaldiaomunicipio: this.state.alcaldiaomunicipio,
