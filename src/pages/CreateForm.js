@@ -544,16 +544,6 @@ class CreateForm extends Component {
                                     name="numerodeareas"
                                     id="numerodeareas"
                                     placeholder="Número de Áreas" />
-                                
-                                <Textarea
-                                    className="form-control input-lg"
-                                    style={{ fontSize: "15px", height: "auto" }}
-                                    onChange={this.onChange}
-                                    value={this.state.desc}
-                                    disabled={this.state.loading}
-                                    name="desc"
-                                    id="_new_desc"
-                                    placeholder="Enter form description" />
 
                                 <div className="row">
                                     <div className="col-4 text-left">
