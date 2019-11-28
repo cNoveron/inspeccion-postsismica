@@ -382,9 +382,9 @@ class CreateForm extends Component {
                             onClick={this.editSection.bind(this, wiz[0], wiz[1].section.name)}>
                             {this.state.sectionName !== wiz[0] ? wiz[1].section.name : ''}
                             {this.state.sectionName == wiz[0] && <Text
-                                className="input-lg"
+                                
                                 type="text"
-                                style={{ fontSize: "20px", height: "34px", marginBottom: "0px" }}
+                                style={{ fontSize: "17px", height: "34px", marginBottom: "0px" }}
                                 disabled={this.state.loading}
                                 onChange={this.onChange}
                                 value={this.state.editName}
@@ -417,6 +417,7 @@ class CreateForm extends Component {
                                             </em></h4>
                                         </div>
                                         <div className="col-5">
+                                            Existe:
                                             <button
                                                 className={classnames({
                                                     'btn required': true,
@@ -432,7 +433,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >No
+                                                        className="" > No
                                                     </span>
                                                 </React.Fragment>}
 
@@ -442,7 +443,7 @@ class CreateForm extends Component {
                                                         style={{ float: "left" }} />
                                                     <span
                                                         style={{ float: "left", lineHeight: "25px" }}
-                                                        className="" >Sí
+                                                        className="" > Sí
                                                     </span>
                                                 </React.Fragment>}
                                             </button>
@@ -481,12 +482,13 @@ class CreateForm extends Component {
             <div className="row justify-content-md-center text-center mb-5">
                 <div className="col-sm-8">
                     {this.props.match.params.id && <h2 className="mt-4">Editando: {this.state.title}</h2>}
-                    {!this.props.match.params.id && <h2 className="mt-4">Nuevo Reporte</h2>}
+                    {!this.props.match.params.id && <h2 className="mt-4">Llenando Nuevo Reporte</h2>}
                     <div className="card">
                         <div className="card-body">
-                            <div>
-                                <h3 className="mt-4">{this.state.title}</h3>
-                            </div>
+                            <h3>{this.state.title === ''
+                                ? 'Nuevo Reporte'
+                                : this.state.title}
+                            </h3>
 
                             {this.state.success && <div class="alert alert-success text-left fade show" role="alert">
                                 <strong>Los cambios han sido guardados!</strong>
