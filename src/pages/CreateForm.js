@@ -412,7 +412,6 @@ class CreateForm extends Component {
                                                     ? 'Inspección del ' + new Date().toUTCString()
                                                     : val[1].title}
                                             </em></h4>
-                                            <p>{val[1].type.toUpperCase().replace("_", " ")}</p>
                                         </div>
                                         <div className="col-5">
                                             <button
