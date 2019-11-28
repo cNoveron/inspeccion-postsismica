@@ -132,15 +132,6 @@ class Card extends Component {
         return (
             <div id={id} className="panel" style={{ padding: 0 }}>
                 <div className="panel-body" style={{ padding: 0 }}>
-
-                    <div className="row">
-                        <div className="col-12">
-                            <div style={{ textAlign: "left", fontSize: "17px" }}>
-                                Seleccione el aspecto a evaluar
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="row">
                         <div className="col-12">
                             <select
@@ -151,6 +142,7 @@ class Card extends Component {
                                 style={{ fontSize: "17px" }}
                                 value={this.state.question}
                             >
+                                <option value="Seleccione el aspecto a evaluar" defaultValue>Seleccione el aspecto a evaluar</option>
                                 <option value="Derrumbe total">Derrumbe total</option>
                                 <option value="Derrumbe parcial">Derrumbe parcial</option>
                                 <option value="Edificación separada de su cimentación">Edificación separada de su cimentación</option>
