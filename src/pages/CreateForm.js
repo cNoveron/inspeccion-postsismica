@@ -34,7 +34,11 @@ class CreateForm extends Component {
             colonia: '',
             alcaldiaomunicipio: '',
             coidgopostal: '',
+            usodesuelo: '',
             numerodeareas: '',
+            numerodesotanos: '',
+            numerodeocupantes: '',
+            nivelessobreelterreno: '',
             desc: '',
             edit: null,
             delete: null,
@@ -381,8 +385,7 @@ class CreateForm extends Component {
                             onKeyDown={this.onKeypress.bind(this, wiz[1].id, wiz[1].sectionId)}
                             onClick={this.editSection.bind(this, wiz[0], wiz[1].section.name)}>
                             {this.state.sectionName !== wiz[0] ? wiz[1].section.name : ''}
-                            {this.state.sectionName == wiz[0] && <Text
-                                
+                            {this.state.sectionName == wiz[0] && <Text                                
                                 type="text"
                                 style={{ fontSize: "17px", height: "34px", marginBottom: "0px" }}
                                 disabled={this.state.loading}
@@ -543,7 +546,7 @@ class CreateForm extends Component {
                                         placeholder="Alcaldía o Municipio" />
                                 </div>
 
-                                <div className="form-group col-md-3">
+                                <div className="form-group col-md-6">
                                     <Text
                                         type="text"
                                         style={{ fontSize: "17px" }}
@@ -554,8 +557,51 @@ class CreateForm extends Component {
                                         id="coidgopostal"
                                         placeholder="Código Postal" />
                                 </div>
+                            </div>
 
-                                <div className="form-group col-md-3">
+                            <div className="d-flex flex-row">
+                                <h4>
+                                    <b style={{ color: '#888' }}>Datos del Inmueble</b>
+                                </h4>
+                            </div>
+
+                            <br />
+                
+                            <div className="form-row">
+                                <div className="form-group col-md-12">
+                                    {/* <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.usodesuelo}
+                                        name="usodesuelo"
+                                        id="usodesuelo"
+                                        placeholder="Uso de Suelo" /> */}
+                                    <select
+                                        className="form-control"
+                                        name="usodesuelo"
+                                        id="usodesuelo"
+                                        onChange={this.onChange}
+                                        style={{ fontSize: "17px" }}
+                                        value={this.state.usodesuelo}
+                                    >
+                                        <option value="0" selected>Casa habitación</option>
+                                        <option value="1">Departamentos</option>
+                                        <option value="2">Comercios</option>
+                                        <option value="3">Oficinas públicas</option>
+                                        <option value="4">Oficinas privadas</option>
+                                        <option value="5">Industrias</option>
+                                        <option value="6">Estacionamiento</option>
+                                        <option value="7">Bodegas</option>
+                                        <option value="8">Educación</option>
+                                        <option value="9">Recreativo</option>
+                                        <option value="10">Centro de reunión</option>
+                                        <option value="11">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div className="form-group col-md-6">
                                     <Text
                                         type="number"
                                         style={{ fontSize: "17px" }}
@@ -566,39 +612,41 @@ class CreateForm extends Component {
                                         id="numerodeareas"
                                         placeholder="Número de Áreas" />
                                 </div>
-                            </div>
 
-                            <div className="d-flex flex-row">
-                                <h4>
-                                    <b style={{ color: '#888' }}>Datos del Domicilio</b>
-                                </h4>
-                            </div>
-
-                            <br />
-
-                            <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <Text
-                                        type="text"
+                                        type="number"
                                         style={{ fontSize: "17px" }}
                                         onChange={this.onChange}
                                         disabled={this.state.loading}
-                                        value={this.state.calleynumero}
-                                        name="calleynumero"
-                                        id="calleynumero"
-                                        placeholder="Calle y número" />
+                                        value={this.state.numerodesotanos}
+                                        name="numerodesotanos"
+                                        id="numerodesotanos"
+                                        placeholder="Número de Sotanos" />
                                 </div>
 
                                 <div className="form-group col-md-6">
                                     <Text
-                                        type="text"
+                                        type="number"
                                         style={{ fontSize: "17px" }}
                                         onChange={this.onChange}
                                         disabled={this.state.loading}
-                                        value={this.state.colonia}
-                                        name="colonia"
-                                        id="colonia"
-                                        placeholder="Colonia" />
+                                        value={this.state.numerodeocupantes}
+                                        name="numerodeocupantes"
+                                        id="numerodeocupantes"
+                                        placeholder="Número de Ocupantes" />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <Text
+                                        type="number"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.nivelessobreelterreno}
+                                        name="nivelessobreelterreno"
+                                        id="nivelessobreelterreno"
+                                        placeholder="Niveles sobre el Terreno" />
                                 </div>
                             </div>
 
