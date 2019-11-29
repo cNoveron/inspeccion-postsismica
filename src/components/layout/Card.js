@@ -1,6 +1,6 @@
 import React, { Component, PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import FieldText from '../fields/Text'
+import Text from '../fields/Text'
 import _ from 'lodash'
 import {
     CHANGE_QUESTION,
@@ -21,9 +21,12 @@ class Card extends Component {
             fieldType: initData.type,
             value: initData.placeholder,
             question: initData.title,
-            options: initData.options
+            options: initData.options,
+            nombredelevaluador: '',
+            cedulaprofesional: '',
         }
 
+        this.onChange = this.onChange.bind(this)
         this.onTitleUpdate = this.onTitleUpdate.bind(this)
         this.onFieldsUpdate = this.onFieldsUpdate.bind(this)
         this.onPlaceholderUpdate = this.onPlaceholderUpdate.bind(this)
@@ -123,6 +126,10 @@ class Card extends Component {
         })
     }
 
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
     render() {
         const type = this.state.fieldType
         const id = this.props.id
@@ -163,20 +170,29 @@ class Card extends Component {
 
                     <div className="row">
                         <div className="col-12">
-                            {(
-                                this.props.data.type == 'text' ||
-                                this.props.data.type == 'textarea' ||
-                                this.props.data.type == 'image_upload'
-                            ) &&
-                                <input
-                                    className="form-control"
-                                    type="text"
-                                    placeholder={this.props.data.type == 'image_upload' ? "Enter description" : "Enter placeholder"}
-                                    name={id + "_placeholder"} 
-                                    value={this.state.value}
-                                    onChange={(e) => { this.setState({ value: e.target.value }) }}
-                                    onBlur={this.onPlaceholderUpdate}
-                                    id={id + "_placeholder"} />}
+                            <div className="form-row">
+                                <div className="form-group col-md-8">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        value={this.state.nombredelevaluador}
+                                        name="nombredelevaluador"
+                                        id="nombredelevaluador"
+                                        placeholder="Nombre del evaluador" />
+                                </div>
+
+                                <div className="form-group col-md-4">
+                                    <Text
+                                        type="Text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        value={this.state.cedulaprofesional}
+                                        name="cedulaprofesional"
+                                        id="cedulaprofesional"
+                                        placeholder="Cedula Profesional" />
+                                </div>
+                            </div>
 
                             {(this.props.data.type == 'radio' || this.props.data.type == 'checkbox' || this.props.data.type == 'dropdown') && (
                                 <div className="row">
@@ -190,7 +206,7 @@ class Card extends Component {
                                                     </a>
                                                 </div>
                                                 <div className="col-10">
-                                                    <FieldText
+                                                    <Text
                                                         type="text"
                                                         style={{ marginBottom: "10px" }}
                                                         placeholder="Enter Option"
@@ -205,6 +221,7 @@ class Card extends Component {
                                                 </div>
                                             </div>
                                         ))}
+
                                         <a href="#"
                                             style={{ display: "block", marginTop: "10px", paddingBottom: "20px" }}
                                             onClick={this.addOption}>Add option</a>
@@ -213,8 +230,6 @@ class Card extends Component {
                                     </div>
                                 </div>
                             )}
-
-
                         </div>
                     </div>
                 </div>

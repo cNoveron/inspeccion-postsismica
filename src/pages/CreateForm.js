@@ -183,6 +183,13 @@ class CreateForm extends Component {
             .catch(err => {
                 console.log(err)
             })
+
+        // // Generar PDF no sirve :'(
+        // ReactPDF.render(<Document>
+        //     <Page>
+        //         <PdfText>Hello</PdfText>
+        //     </Page>
+        // </Document>,`./output.pdf`);
     }
 
     addCard(e) {
@@ -559,6 +566,8 @@ class CreateForm extends Component {
                                 </div>
                             </div>
 
+                            <hr />
+
                             <div className="d-flex flex-row">
                                 <h4>
                                     <b style={{ color: '#888' }}>Datos del Inmueble</b>
@@ -569,15 +578,6 @@ class CreateForm extends Component {
                 
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    {/* <Text
-                                        type="text"
-                                        style={{ fontSize: "17px" }}
-                                        onChange={this.onChange}
-                                        disabled={this.state.loading}
-                                        value={this.state.usodesuelo}
-                                        name="usodesuelo"
-                                        id="usodesuelo"
-                                        placeholder="Uso de Suelo" /> */}
                                     <select
                                         className="form-control"
                                         name="usodesuelo"
@@ -586,7 +586,8 @@ class CreateForm extends Component {
                                         style={{ fontSize: "17px" }}
                                         value={this.state.usodesuelo}
                                     >
-                                        <option value="0" selected>Casa habitación</option>
+                                        <option value="" selected>Seleccione el uso de suelo</option>
+                                        <option value="0">Casa habitación</option>
                                         <option value="1">Departamentos</option>
                                         <option value="2">Comercios</option>
                                         <option value="3">Oficinas públicas</option>
