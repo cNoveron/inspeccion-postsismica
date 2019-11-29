@@ -494,88 +494,139 @@ class CreateForm extends Component {
                                 <strong>Los cambios han sido guardados!</strong>
                             </div>}
 
-                            <div className="form-group">
-                                <Text
-                                    className="input-lg"
-                                    type="text"
-                                    style={{ fontSize: "20px" }}
-                                    onChange={this.onChange}
-                                    disabled={this.state.loading}
-                                    value={this.state.calleynumero}
-                                    name="calleynumero"
-                                    id="calleynumero"
-                                    placeholder="Calle y número" />
+                            <hr />
 
-                                <Text
-                                    className="input-lg"
-                                    type="text"
-                                    style={{ fontSize: "20px" }}
-                                    onChange={this.onChange}
-                                    disabled={this.state.loading}
-                                    value={this.state.colonia}
-                                    name="colonia"
-                                    id="colonia"
-                                    placeholder="Colonia" />
+                            <div className="d-flex flex-row">
+                                <h4>
+                                    <b style={{ color: '#888' }}>Datos del Domicilio</b>
+                                </h4>
+                            </div>
 
-                                <Text
-                                    className="input-lg"
-                                    type="text"
-                                    style={{ fontSize: "20px" }}
-                                    onChange={this.onChange}
-                                    disabled={this.state.loading}
-                                    value={this.state.alcaldiaomunicipio}
-                                    name="alcaldiaomunicipio"
-                                    id="alcaldiaomunicipio"
-                                    placeholder="Alcaldía o Municipio" />
+                            <br/>
+                            
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.calleynumero}
+                                        name="calleynumero"
+                                        id="calleynumero"
+                                        placeholder="Calle y número" />
+                                </div>
 
-                                <Text
-                                    className="input-lg"
-                                    type="text"
-                                    style={{ fontSize: "20px" }}
-                                    onChange={this.onChange}
-                                    disabled={this.state.loading}
-                                    value={this.state.coidgopostal}
-                                    name="coidgopostal"
-                                    id="coidgopostal"
-                                    placeholder="Código Postal" />
-                                
-                                <Text
-                                    className="input-lg"
-                                    type="number"
-                                    style={{ fontSize: "20px" }}
-                                    onChange={this.onChange}
-                                    disabled={this.state.loading}
-                                    value={this.state.numerodeareas}
-                                    name="numerodeareas"
-                                    id="numerodeareas"
-                                    placeholder="Número de Áreas" />
+                                <div className="form-group col-md-6">
+                                    <Text                                    
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.colonia}
+                                        name="colonia"
+                                        id="colonia"
+                                        placeholder="Colonia" />
+                                </div>
+                            </div>
 
-                                <div className="row">
-                                    <div className="col-4 text-left">
-                                        <Link to="/" className="btn btn-outline-secondary">&larr; Menú Principal</Link>
-                                    </div>
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.alcaldiaomunicipio}
+                                        name="alcaldiaomunicipio"
+                                        id="alcaldiaomunicipio"
+                                        placeholder="Alcaldía o Municipio" />
+                                </div>
 
-                                    <div className="col-8">
-                                        <div className="text-right">
+                                <div className="form-group col-md-3">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.coidgopostal}
+                                        name="coidgopostal"
+                                        id="coidgopostal"
+                                        placeholder="Código Postal" />
+                                </div>
+
+                                <div className="form-group col-md-3">
+                                    <Text
+                                        type="number"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.numerodeareas}
+                                        name="numerodeareas"
+                                        id="numerodeareas"
+                                        placeholder="Número de Áreas" />
+                                </div>
+                            </div>
+
+                            <div className="d-flex flex-row">
+                                <h4>
+                                    <b style={{ color: '#888' }}>Datos del Domicilio</b>
+                                </h4>
+                            </div>
+
+                            <br />
+
+                            <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.calleynumero}
+                                        name="calleynumero"
+                                        id="calleynumero"
+                                        placeholder="Calle y número" />
+                                </div>
+
+                                <div className="form-group col-md-6">
+                                    <Text
+                                        type="text"
+                                        style={{ fontSize: "17px" }}
+                                        onChange={this.onChange}
+                                        disabled={this.state.loading}
+                                        value={this.state.colonia}
+                                        name="colonia"
+                                        id="colonia"
+                                        placeholder="Colonia" />
+                                </div>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-4 text-left">
+                                    <Link to="/" className="btn btn-outline-secondary">&larr; Menú Principal</Link>
+                                </div>
+
+                                <div className="col-8">
+                                    <div className="text-right">
+                                        <button
+                                            className="btn btn-success"
+                                            type="button"
+                                            disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
+                                            style={{ display: "inline-flex", flexDirection: "row" }}
+                                            onClick={this.saveForm}>
+                                            <MdDone size="1.5em" /> {this.state.loading == true ? 'Cargando...' : 'Guardar'}
+                                        </button>
+
+                                        <div className="btn-group">
                                             <button
-                                                className="btn btn-success"
+                                                className="btn btn-primary"
                                                 type="button"
                                                 disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
-                                                style={{ display: "inline-flex", flexDirection: "row" }}
-                                                onClick={this.saveForm}>
-                                                <MdDone size="1.5em" /> {this.state.loading == true ? 'Cargando...' : 'Guardar'}
+                                                style={{ marginLeft: "10px", display: "inline-flex", flexDirection: "row" }}
+                                                onClick={this.addSection}>
+                                                <MdAdd size="1.5em" /> Nueva Inspección
                                             </button>
-
-                                            <div className="btn-group">
-                                                <button
-                                                    className="btn btn-primary"
-                                                    type="button"
-                                                    disabled={this.state.disabled || (this.state.init && _.isEmpty(forms.create))}
-                                                    style={{ marginLeft: "10px", display: "inline-flex", flexDirection: "row" }}
-                                                    onClick={this.addSection}>
-                                                    <MdAdd size="1.5em" /> Nueva Inspección
-                                                </button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
