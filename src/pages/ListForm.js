@@ -69,38 +69,9 @@ class ListForm extends Component {
                                     }}>
                                         <MdAddCircle size="1.5em" /> Analizar edificación
                                     </button>
-                                    <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
-                                        this.props.clearForm()
-                                        this.props.history.push("/new")
-                                    }}>
-                                        <MdAddCircle size="1.5em" /> Generar reporte y/o dictamen
-                                    </button>
-                                    <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
-                                        this.props.clearForm()
-                                        this.props.history.push("/new")
-                                    }}>
-                                        <MdAddCircle size="1.5em" /> Modificar reporte y/o dictamen
-                                    </button>
-                                    <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
-                                        this.props.clearForm()
-                                        this.props.history.push("/new")
-                                    }}>
-                                        <MdAddCircle size="1.5em" /> Consultar e imprimir reporte
-                                    </button>
-                                    <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
-                                        this.props.clearForm()
-                                        this.props.history.push("/new")
-                                    }}>
-                                        <MdAddCircle size="1.5em" /> Mi cuenta
-                                    </button>
                                 </div>
-
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="card">
-                        <div className="card-body">
+                            
                             <div className="table-responsive">
                                 <table className="table table-hover text-left">
                                     <thead>
