@@ -56,12 +56,12 @@ class ListForm extends Component {
         const forms = this.props.forms
         return (
             <div className="row justify-content-md-center text-center">
-                <div className="col-sm-8">
-                    <h2 className="mt-4">Form Builder</h2>
+                <div className="col-sm-12">
+                    <h2 className="mt-4">Fissure Detector</h2>
+
                     <div className="card">
                         <div className="card-body">
-                            <div className="form-group" style={{ marginBottom: "0px" }}>
-
+                            <div className="form-group">
                                 <div className="text-left">
                                     <button type="button" style={{ display: "inline-flex", flexDirection: "row" }} className="btn btn-success" onClick={() => {
                                         this.props.clearForm()
@@ -82,24 +82,20 @@ class ListForm extends Component {
                                             <th>Editar</th>
                                         </tr>
                                     </thead>
-                                    {!_.isEmpty(forms.list) &&
-                                        <tbody>
-                                            {forms.list.map((row, ind) => (
-                                                <tr key={ind}>
-                                                    <td>{row.calleynumero}</td>
-                                                    <td>{row.colonia}</td>
-                                                    <td>{row.alcaldiaomunicipio}</td>
-                                                    <td>
-                                                        {row.description.substr(0, 25)}{row.description.length > 25 ? '...' : ''}
-                                                    </td>
-                                                    <td>
-                                                        <a className="btn btn-outline-primary" onClick={this.gotoEdit.bind(this, row.id)}>
-                                                            <MdCreate size="1.5em" />
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>}
+                                    {!_.isEmpty(forms.list) && <tbody>
+                                        {forms.list.map((row, ind) => (
+                                            <tr key={ind}>
+                                                <td>{row.calleynumero}</td>
+                                                <td>{row.colonia}</td>
+                                                <td>{row.alcaldiaomunicipio}</td>
+                                                <td>
+                                                    <a className="btn btn-outline-primary" onClick={this.gotoEdit.bind(this, row.id)}>
+                                                        <MdCreate size="1.5em" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>}
 
                                     {_.isEmpty(forms.list) && <tbody>
                                         <tr>
@@ -111,7 +107,6 @@ class ListForm extends Component {
                                 </table>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
